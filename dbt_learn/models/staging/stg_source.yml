@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: snowflake_sample_data_tpch_sf1  # logical name used in ref()
+    database: snowflake_sample_data    # optional if same as target
+    schema: tpch_sf1  # the schema in your database
+    description: "raw data from source system"
+    tables:
+      - name: customer
+        description: "description of the table"
+        columns:
+          - name: c_custkey
+            description: "unique user identifier"
+            tests:
+              - unique
+              - not_null
+      - name: orders
+  - name: db_mschema_m  # logical name used in ref()
+    database: db_m    # optional if same as target
+    schema: schema_m  # the schema in your database
+    description: "raw data from source system"
+    tables:
+      - name: time_dim

@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: my_first_model_stg
+    columns:
+      - name: id
+        tests:
+          - not_null
+  - name: playing_with_tests
+    columns:
+      - name: c_custkey
+        tests:
+          - unique
+          - not_null
+      - name: c_mktsegment
+        tests:
+          - accepted_values:
+              values: ['BUILDING', 'AUTOMOBILE', 'MACHINERY', 'HOUSEHOLD', 'FURNITURE']

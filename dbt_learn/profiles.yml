@@ -1,0 +1,9 @@
+dbt_learn:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: SYSADMIN
+      warehouse: DBT_WH
+      database: DBT_DB
+      schema: DBT_SCHEMA

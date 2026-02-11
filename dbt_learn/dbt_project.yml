@@ -1,0 +1,29 @@
+name: dbt_learn
+version: 1.0.0
+config-version: 2
+profile: dbt_learn
+model-paths:
+  - models
+analysis-paths:
+  - analyses
+test-paths:
+  - tests
+seed-paths:
+  - seeds
+macro-paths:
+  - macros
+snapshot-paths:
+  - snapshots
+models:
+  dbt_learn:
+    staging:
+      +materialized: view
+    datawarehouese:
+      +materialized: table
+    datamart:
+      +materialized: table
+vars:
+  my_first_variable: true
+  my_second_variable: 2020
+  my_third_variable: 1
+

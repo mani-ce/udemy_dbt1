@@ -1,0 +1,6 @@
+select c_nationkey nation,
+    month(o_orderdate) monthof_order,
+    year(o_orderdate) yearof_order,
+    sum(o_totalprice) over(partition by c_nationkey,month(o_orderdate)) month_totalorders,
+    sum(o_totalprice) over(partition by c_nationkey,year(o_orderdate)) year_totalorders
+  from {{ ref('dw_customerorders') }}
