@@ -21,3 +21,4 @@ sources:
     description: "raw data from source system"
     tables:
       - name: time_dim
+      - name: employee
